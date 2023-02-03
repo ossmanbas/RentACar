@@ -1,0 +1,16 @@
+<div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
+    <span class="sr-only"></span>
+  </div>
+  
+  <table *ngIf="dataLoaded" class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Renk</th>
+      </tr>
+    </thead>
+    <tr *ngFor="let color of colors">
+      <td>{{ color.id }}</td>
+      <td>{{ color.name }}</td> 
+    </tr>
+  </table>
