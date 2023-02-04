@@ -12,20 +12,27 @@ Hello {{user}}
   <app-navi></app-navi>
   <div class="row">
     <div class="col-md-3">
-      <app-category></app-category>
+      <h4>Markalar</h4>
+      <app-brand></app-brand>
     </div>
     <div class="col-md-9">
+      <h4>Araçlar</h4>
       <app-car></app-car>
     </div>
   </div>
   <div class="row">
     <div class="col-md-6">
-      <app-brand></app-brand>
-    </div>
-    <div class="col-md-6">
+      <h5>Renkler</h5>
       <app-color></app-color>
     </div>
-    
+    <div class="col-md-6">
+      <h5>Müşteriler</h5>
+      <app-customer></app-customer>
+    </div>
+  </div>
+  <div class="row col-md-12">
+    <h3>Kiralamalar</h3>
+    <app-rental></app-rental>
   </div>
   
   <router-outlet></router-outlet>
