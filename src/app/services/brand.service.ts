@@ -1,21 +1,21 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { carResponseModel } from '../models/carResponseModel';
+import { brandResponseModel } from '../models/brandResponseModel';
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class CarService {
+export class BrandService {
 
-  apiUrl = "https://localhost:44307/api/Cars/getall";
+  apiUrl = "https://localhost:44307/api/Brands/getall";
   constructor(private httpClient:HttpClient) { }
 
 
   //Observable = subscribe olunabilir hale getirmek.
-  getCars():Observable<carResponseModel>{
-    return this.httpClient.get<carResponseModel>(this.apiUrl);
+  getBrands():Observable<brandResponseModel>{
+    return this.httpClient.get<brandResponseModel>(this.apiUrl);
   }
 
 }
