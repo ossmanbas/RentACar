@@ -1,8 +1,9 @@
-<div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
+<!-- Eski Yapı
+   <div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
     <span class="sr-only"></span>
-  </div>
+  </div> -->
   
-  <table *ngIf="dataLoaded" class="table">
+  <!-- <table *ngIf="dataLoaded" class="table">
     <thead>
       <tr>
         <th>ID</th>
@@ -13,4 +14,17 @@
       <td>{{ brand.id }}</td>
       <td>{{ brand.name }}</td> 
     </tr>
-  </table>
+  </table> 
+Eski Yapı-->
+
+  <!-- Yeni Yapı -->
+  <ul class="list-group">
+<li (click)="setCurrentBrand(brand)" *ngFor="let brand of brands" 
+  
+  [class] ="getCurrentBrandClass(brand)">
+  {{brand.name}}
+</li>
+  </ul>
+  <!-- Yeni Yapı -->
+
+ <h5 *ngIf="currentBrand">{{currentBrand.name}} seçtiniz.</h5> 
