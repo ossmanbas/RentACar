@@ -20,7 +20,7 @@ Eski Yapı-->
   <!-- Yeni Yapı -->
   <ul class="list-group">
 <li (click)="setCurrentBrand(brand)" *ngFor="let brand of brands" 
-  
+  routerLink="/cars/brand/{{brand.id}}"
   [class] ="getCurrentBrandClass(brand)">
   {{brand.name}}
 </li>

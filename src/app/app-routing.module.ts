@@ -4,7 +4,9 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {path:"",pathMatch:"full",component:CarComponent}, // Anasayfada hiç bişey açılmazsa Car Componenti aç. path = Default açılacak sayfa.
-  {path:"cars",component:CarComponent} //path domain isminden sonra gelecek sayfa. wwww.blabla.com/cars
+  {path:"cars",component:CarComponent}, //path domain isminden sonra gelecek sayfa. wwww.blabla.com/cars
+  {path:"cars/brand/:brandId",component:CarComponent} // : brandId aslında bizim 1 2 3 diye yolladığımız değerler. Karşılamak için : kullanıyoruz.
+
 ];
 
 @NgModule({
