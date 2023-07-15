@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { brandResponseModel } from '../models/brandResponseModel';
+import { Brand } from '../models/brand';
+import { ListResponseModel } from '../models/listResponseModel';
+
 
 
 @Injectable({
@@ -10,12 +12,11 @@ import { brandResponseModel } from '../models/brandResponseModel';
 export class BrandService {
 
   apiUrl = "https://localhost:44307/api/Brands/getall";
+  
   constructor(private httpClient:HttpClient) { }
 
-
-  //Observable = subscribe olunabilir hale getirmek.
-  getBrands():Observable<brandResponseModel>{
-    return this.httpClient.get<brandResponseModel>(this.apiUrl);
+  getBrands():Observable<ListResponseModel<Brand>> {
+    return this.httpClient.get<ListResponseModel<Brand>>(this.apiUrl);
   }
 
 }

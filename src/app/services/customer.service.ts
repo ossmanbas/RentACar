@@ -1,7 +1,9 @@
+import { Customer } from './../models/customer';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { customerResponseModel } from '../models/customerResponseModel';
+import { ListResponseModel } from '../models/listResponseModel';
+
 
 
 @Injectable({
@@ -14,8 +16,8 @@ export class CustomerService {
 
 
   //Observable = subscribe olunabilir hale getirmek.
-  getCustomers():Observable<customerResponseModel>{
-    return this.httpClient.get<customerResponseModel>(this.apiUrl);
+  getCustomers():Observable<ListResponseModel<Customer>> {
+    return this.httpClient.get<ListResponseModel<Customer>>(this.apiUrl);
   }
 
 }

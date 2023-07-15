@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { rentalResponseModel } from '../models/rentalResponseModel';
+import { ListResponseModel } from '../models/listResponseModel';
+import { Rental } from '../models/rental';
+
 
 
 @Injectable({
@@ -14,8 +16,8 @@ export class RentalService {
 
 
   //Observable = subscribe olunabilir hale getirmek.
-  getRentals():Observable<rentalResponseModel>{
-    return this.httpClient.get<rentalResponseModel>(this.apiUrl);
+  getRentals():Observable<ListResponseModel<Rental>>{
+    return this.httpClient.get<ListResponseModel<Rental>>(this.apiUrl);
   }
 
 }
